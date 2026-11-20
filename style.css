@@ -1,99 +1,153 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'poppins', sans-serif;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-.container{
+
+body {
+    background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 50%, #e0c3fc 100%);
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 50%, #e0c3fc 100%);
-    padding: 10px;
+    padding: 20px;
 }
-.todo-app{
+
+.todo-box {
+    max-width: 450px;
     width: 100%;
-    max-width: 540px;
-    background: #fff;
-    margin: 100px auto 20px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    margin: 80px auto 20px;
     padding: 40px 30px 70px;
-    border-radius: 10px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(238, 156, 167, 0.25);
 }
-.todo-app h2{
-    color: #002765;
+
+.todo-box h1 {
     display: flex;
     align-items: center;
+    justify-content: center;
+    font-size: 22px;
     margin-bottom: 20px;
+    color: #4a3b42;
 }
-.todo-app h2 img{
-    width: 30px;
+
+.todo-box img {
+    width: 24px;
+    height: 24px;
     margin-left: 10px;
 }
-.row{
+
+.input-area {
+    padding: 5px 5px 5px 15px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    border-radius: 30px;
-    background: #edeef0;
-    margin-bottom: 25px;
-    padding-left: 20px;
+    align-items: center;
+    background: #fff;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
-input{
+
+.input-area input {
+    border: none;
+    outline: none;
     flex: 1;
-    border: none;
-    outline: none;
     background: transparent;
-    padding: 10px;
-    font-weight: 14px;
+    font-size: 15px;
+    padding: 8px;
 }
-button{
+
+.input-area button {
     border: none;
-    outline: none;
-    padding: 16px 50px;
     background: #ee9ca7;
     color: #fff;
-    font-size: 16px;
-    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
     border-radius: 40px;
+    padding: 14px 36px;
+    cursor: pointer;
+    transition: background 0.2s ease;
 }
-ul li{
+
+.input-area button:hover {
+    background: #e58592;
+}
+
+ul li {
     list-style: none;
     font-size: 17px;
-    padding: 12px 8px 12px 50px;
+    padding: 12px 8px 12px 48px;
     cursor: pointer;
     user-select: none;
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #3d3136;
 }
-ul li::before{
+
+ul li::before {
     content: '';
     position: absolute;
-    height: 28px;
-    width: 28px;
+    height: 26px;
+    width: 26px;
     border-radius: 50%;
     background-size: cover;
     background-position: center;
-    background-image: url(images/unchecked.png);
-    top: 12px;
+    background-image: url("images/unchecked.png");
+    top: 50%;
+    transform: translateY(-50%);
     left: 8px;
 }
-ul li.checked{
+
+/* Task text stretches to fill the middle, pushing buttons to the right */
+ul li .task-text {
+    flex: 1;
+    outline: none;
+    padding: 4px 8px;
+    border-radius: 8px;
+    word-break: break-word;
+}
+
+/* Pink outline glow while actively editing a task */
+ul li .task-text[contenteditable="true"] {
+    background: #fff;
+    box-shadow: 0 0 0 2px #ee9ca7;
+    cursor: text;
+    user-select: text;
+}
+
+ul li.marked .task-text {
     color: #ee9ca7;
     text-decoration: line-through;
 }
-ul li.checked::before{
-    background-image: url(images/checked.png);
+
+ul li.marked::before {
+    background-image: url("images/checked.png");
 }
-ul li span{
-    position: absolute;
-    right: 0;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    line-height: 40px;
-    text-align: center;
-    color: #ee9ca7;
+
+/* Edit (✎) and Delete (×) buttons */
+ul li .edit-btn,
+ul li .delete-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
+    color: #ee9ca7;
+    flex-shrink: 0;
+    transition: background 0.2s ease, color 0.2s ease;
 }
-ul li span:hover{
-    background: #edeef0;
+
+ul li .edit-btn:hover {
+    background: #ffdde1;
+    color: #c95b6b;
+}
+
+ul li .delete-btn:hover {
+    background: #ee9ca7;
+    color: #fff;
 }

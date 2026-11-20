@@ -1,27 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>
-            To-Do App
-        </title>
+        <title>To-Do App</title>
         <meta charset="UTF-8">
-        <meta lang="en-US">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="images/icon.png">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style2.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
-            <div class="todo-app">
-                <h2>To-Do List <img src="images/icon.png"></h2>
-                <div class="row">
-                    <input type="text" id="input-box" placeholder="Add your text">
-                    <button onclick="addTask()">Add</button>
-                </div>
-                <ul id="list-container">
-                </ul>
+        <div class="todo-box">
+            <h1>To-Do list app <img src="images/icon.png" alt="To-do icon"></h1>
+            <div class="input-area">
+                <input type="text" placeholder="Enter task" id="input-box">
+                <button onclick="addTask()">Add</button>
             </div>
+            <ul id="container"></ul>
         </div>
-        <script src="script.js"></script>
+        <script src="script2.js"></script>
     </body>
 </html>
