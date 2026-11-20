@@ -101,7 +101,6 @@ ul li::before {
     left: 8px;
 }
 
-/* Task text stretches to fill the middle, pushing buttons to the right */
 ul li .task-text {
     flex: 1;
     outline: none;
@@ -110,7 +109,6 @@ ul li .task-text {
     word-break: break-word;
 }
 
-/* Pink outline glow while actively editing a task */
 ul li .task-text[contenteditable="true"] {
     background: #fff;
     box-shadow: 0 0 0 2px #ee9ca7;
@@ -127,7 +125,6 @@ ul li.marked::before {
     background-image: url("images/checked.png");
 }
 
-/* Edit (✎) and Delete (×) buttons */
 ul li .edit-btn,
 ul li .delete-btn {
     width: 34px;
